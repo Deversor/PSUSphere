@@ -5,6 +5,7 @@ from studentorg.forms import OrganizationForm
 from django.urls import reverse_lazy
 from studentorg.models import Organization
 from django.db.models import Q
+
 class HomePageView(ListView):
     model = Organization
     context_object_name = 'home'
