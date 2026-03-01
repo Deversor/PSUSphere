@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">List of Programs</div>
-                        <div class="card-category">Page Subtitle</div>
+                        <div class="card-category">Organize Programs</div>
                     </div>
                     <br />
                     <div class="col-md-12 row">
@@ -49,18 +49,16 @@
                         <table class="table table-striped mt-3">
                             <thead>
                                 <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">College</th>
-                                    <th scope="col">Description</th>
-                                    <th scope="col">Action</th>
+                                    <th>Program Name</th>
+                                    <th>College</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for object in object_list %}
                                 <tr>
-                                    <td>{{ object.name }}</td>
+                                    <td>{{ object.prog_name }}</td>
                                     <td>{{ object.college }}</td>
-                                    <td>{{ object.description }}</td>
                                     <td>
                                         <a href="program_list/{{ object.id }}">Edit</a>
                                         <a href="program_list/{{ object.id }}/delete" class="text-danger">Delete</a>
