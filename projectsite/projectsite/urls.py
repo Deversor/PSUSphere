@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from studentorg.views import HomePageView, OrganizationList, OrganizationCreateView, OrganizationUpdateView, OrganizationDeleteView
+from studentorg.views import OrgMemberList, OrgMemberCreateView, OrgMemberUpdateView, OrgMemberDeleteView
+from studentorg.views import StudentList, StudentCreateView, StudentUpdateView, StudentDeleteView
+from studentorg.views import CollegeList, CollegeCreateView, CollegeUpdateView, CollegeDeleteView
+from studentorg.views import ProgramList, ProgramCreateView, ProgramUpdateView, ProgramDeleteView
 from studentorg import views
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -37,5 +41,15 @@ urlpatterns = [
     path('student_list/<pk>', views.StudentUpdateView.as_view(), name='student-update'),
     path('student_list/<pk>/delete', views.StudentDeleteView.as_view(), name='student-delete'),
 
+    #College 
+    path('college_list', CollegeList.as_view(), name='college-list'),
+    path('college_list/add', CollegeCreateView.as_view(), name='college-add'),
+    path('college_list/<pk>', CollegeUpdateView.as_view(), name='college-update'),
+    path('college_list/<pk>/delete', CollegeDeleteView.as_view(), name='college-delete'),
+    #Program 
+    path('program_list', ProgramList.as_view(), name='program-list'),
+    path('program_list/add', ProgramCreateView.as_view(), name='program-add'),
+    path('program_list/<pk>', ProgramUpdateView.as_view(), name='program-update'),
+    path('program_list/<pk>/delete', ProgramDeleteView.as_view(), name='program-delete'),
 ]
 
