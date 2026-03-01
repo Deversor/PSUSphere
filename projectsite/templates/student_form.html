@@ -9,9 +9,9 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">
-                            {% if object %} Update Organization {% else %} Add New Organization {% endif %}
+                            {% if object %} Update Student {% else %} Add New Student {% endif %}
                         </div>
-                        <div class="card-category">Page Subtitle</div>
+                        <div class="card-category">Student Information Details</div>
                     </div>
 
                     <div class="col-md-6">
@@ -23,6 +23,7 @@
                                 <div class="form-group">
                                     <div class="col-md-12 col-sm-3">
                                         <button type="submit" class="btn btn-primary btn-rounded">Submit</button>
+                                        <a href="{% url 'student-list' %}" class="btn btn-secondary btn-rounded">Cancel</a>
                                     </div>
                                 </div>
                             </form>
