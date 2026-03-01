@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from studentorg.forms import OrganizationForm, OrgMemberForm, StudentForm, CollegeForm, ProgramForm
@@ -6,7 +7,7 @@ from django.urls import reverse_lazy
 from studentorg.models import Organization, Student, OrgMember, College, Program
 from django.db.models import Q
 from django.utils import timezone
-class HomePageView(ListView):
+class HomePageView(LoginRequiredMixin, ListView):
     model = Organization
     context_object_name = 'home'
     template_name = "home.html"
